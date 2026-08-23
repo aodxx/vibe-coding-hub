@@ -2,7 +2,7 @@
 
 คลังความรู้ที่ผ่านการตรวจสอบสำหรับ **Vibe Coding**, **AI Coding** และการทำงานร่วมกับ Coding Agents โดยเน้นข้อมูลจากต้นทางจริง นำกลับมาใช้ได้ง่าย และเคารพเงื่อนไข License
 
-> สถานะ: อยู่ระหว่างจัดเตรียมโครงสร้างเริ่มต้น รายการในคลังจะถูกเพิ่มผ่าน branch และ Pull Request เท่านั้น
+> สถานะ: พร้อมรับรายการที่ผ่านการตรวจสอบ ดูรายการทั้งหมดได้ที่ [Catalog Index](catalog/INDEX.md)
 
 ## ขอบเขต
 
@@ -57,7 +57,14 @@ archive/
 
 ## การมีส่วนร่วม
 
-ใช้ branch รูปแบบ `scout/YYYY-MM-DD-topic` และเปิด Pull Request เข้า `main` ห้าม Force Push หรือ Merge อัตโนมัติ การเพิ่มรายการใหม่ควรเริ่มจาก [Entry Template](templates/ENTRY_TEMPLATE.md)
+การเพิ่มรายการใหม่ควรเริ่มจาก [Entry Template](templates/ENTRY_TEMPLATE.md) ตรวจข้อมูลจากต้นทาง แล้วรันคำสั่งต่อไปนี้ก่อน Commit ทุกครั้ง
+
+```bash
+npm test
+npm run build
+```
+
+เมื่อทั้งสองคำสั่งผ่านโดยไม่มี Error ให้ Commit ด้วยข้อความกระชับและ Push ตรงเข้า `main` ไม่ต้องเปิด Pull Request เว้นแต่ได้รับคำสั่งโดยชัดเจน
 
 ## License
 
