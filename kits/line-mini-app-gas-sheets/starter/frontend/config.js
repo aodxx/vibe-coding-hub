@@ -1,0 +1,4 @@
+window.APP_CONFIG = Object.freeze({
+  LIFF_ID: "PASTE_LIFF_ID_HERE",
+  API_URL: "PASTE_APPS_SCRIPT_EXEC_URL_HERE"
+});

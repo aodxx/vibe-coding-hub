@@ -1,10 +1,10 @@
 {
   "name": "vibe-coding-hub",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
-  "description": "Verified catalog for Vibe Coding resources",
+  "description": "Production-minded project kits for Vibe Coding",
   "scripts": {
-    "test": "node scripts/validate-catalog.mjs",
-    "build": "node scripts/build-catalog.mjs"
+    "test": "node scripts/validate-catalog.mjs && node scripts/validate-kits.mjs",
+    "build": "node scripts/build-catalog.mjs && node scripts/build-kits.mjs"
   }
 }

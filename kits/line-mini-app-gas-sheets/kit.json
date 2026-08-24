@@ -1,0 +1,11 @@
+{
+  "slug": "line-mini-app-gas-sheets",
+  "name": "LINE Mini App + Google Apps Script + Google Sheets",
+  "version": "0.1.0",
+  "status": "MVP ready",
+  "summary": "Starter kit สำหรับสร้างแอปบันทึกรายการบน LINE โดยใช้ Apps Script เป็น API และ Google Sheets เป็นฐานข้อมูล",
+  "stack": ["LIFF", "Vanilla JavaScript", "Google Apps Script", "Google Sheets"],
+  "entrypoint": "starter/frontend/index.html",
+  "license": "MIT",
+  "updated_on": "2026-08-24"
+}

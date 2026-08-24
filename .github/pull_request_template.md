@@ -1,27 +1,23 @@
 ## สรุป
 
-อธิบายรายการที่เพิ่มหรือข้อมูลที่ปรับปรุง
+อธิบาย Kit หรือเนื้อหาที่เพิ่มและปัญหาที่แก้
 
 ## ประเภท
 
-- [ ] Repository
-- [ ] System Prompt
-- [ ] Cursor Rules
-- [ ] Agent Instructions
-- [ ] App Template
-- [ ] Workflow / Skill / MCP / Automation
+- [ ] Project Kit ใหม่
+- [ ] ปรับปรุง Project Kit
+- [ ] Legacy Catalog
 - [ ] โครงสร้างหรือเอกสารของ Hub
 
 ## การตรวจสอบ
 
-- [ ] ตรวจรายการซ้ำแล้ว
-- [ ] ตรวจต้นทางจริงแล้ว
-- [ ] ตรวจ README, LICENSE, Release และ Commit แล้ว
-- [ ] ตรวจความเสี่ยงด้านสคริปต์ dependency และ credential แล้ว
-- [ ] คะแนนอย่างน้อย 70/100 หรืออธิบายเหตุผลของการเปลี่ยนแปลงโครงสร้าง
-- [ ] ไม่มี secret หรือข้อมูลส่วนตัว
-- [ ] ไม่คัดลอกเนื้อหาเกินสิทธิ์ที่ License อนุญาต
+- [ ] npm test ผ่าน
+- [ ] npm run build ผ่านและ Commit ไฟล์ Index ที่เปลี่ยน
+- [ ] ไม่มี Secret หรือข้อมูลส่วนตัว
+- [ ] ตรวจ Authentication, validation และ error states แล้ว
+- [ ] คู่มือ Setup/Deploy และ Acceptance Criteria ตรงกับโค้ด
+- [ ] ระบุ License ครบ
 
-## แหล่งอ้างอิง
+## การทดสอบด้วยมือ
 
-ใส่ลิงก์ต้นทางและหลักฐานสำคัญ
+ระบุขั้นตอนและผลที่ตรวจ เช่น health check, login, create/list data และ mobile layout

@@ -1,73 +1,62 @@
-# Vibe Coding Hub
+# Vibe Coding Hub — Project Kits
 
-คลังความรู้ที่ผ่านการตรวจสอบสำหรับ **Vibe Coding**, **AI Coding** และการทำงานร่วมกับ Coding Agents โดยเน้นข้อมูลจากต้นทางจริง นำกลับมาใช้ได้ง่าย และเคารพเงื่อนไข License
+คลัง **Project Kits ที่พร้อมนำไปสร้างแอปต่อ** สำหรับคนใช้ Vibe Coding และ AI Coding โดยแต่ละ Kit รวมโค้ดเริ่มต้น สถาปัตยกรรม คู่มือติดตั้ง Checklist ความปลอดภัย และ Prompt สำหรับสั่ง AI ไว้ในชุดเดียว
 
-> สถานะ: พร้อมรับรายการที่ผ่านการตรวจสอบ ดูรายการทั้งหมดได้ที่ [Catalog Index](catalog/INDEX.md)
+> เป้าหมายใหม่: ลดเวลาจาก “เจอแหล่งข้อมูลที่น่าสนใจ” ไปสู่ “มีโปรเจกต์ต้นแบบที่เปิด แก้ และ Deploy ได้”
 
-## ขอบเขต
+## เริ่มจากตรงนี้
 
-- GitHub Repository สำหรับ Vibe Coding และ AI Coding
-- System Prompt และ Agent Prompt
-- Cursor Rules: `.cursor/rules/*.mdc` และ `.cursorrules`
-- Agent Instructions: `AGENTS.md`, `CLAUDE.md`
-- App Templates และ Starter Kits
-- Workflow, Skill, MCP และ Automation Templates
+| Kit | เหมาะสำหรับ | สถานะ |
+|---|---|---|
+| [LINE Mini App + Google Apps Script + Google Sheets](kits/line-mini-app-gas-sheets/README.md) | แอปมือถือใน LINE ที่ใช้ Google Sheets เป็นฐานข้อมูลและไม่ต้องดูแล Server | MVP พร้อมตั้งค่า |
 
-## เกณฑ์รับเข้าคลัง
+ดู Project Kits ทั้งหมดได้ที่ [Kit Index](kits/INDEX.md)
 
-แต่ละรายการต้องได้อย่างน้อย **70/100 คะแนน**
+## ในหนึ่ง Kit มีอะไร
 
-| เกณฑ์ | คะแนน |
-|---|---:|
-| ความเกี่ยวข้องกับ Vibe Coding | 25 |
-| การดูแลและความเคลื่อนไหวล่าสุด | 20 |
-| คุณภาพเอกสารและความง่ายในการนำไปใช้ | 15 |
-| การยอมรับจากชุมชน | 15 |
-| License และสิทธิ์ในการนำกลับมาใช้ | 15 |
-| ความปลอดภัยและความน่าเชื่อถือ | 10 |
+- Starter code ที่มีขอบเขตชัดเจนและไม่มี Secret ฝังใน Source
+- QUICKSTART.md สำหรับทำตามทีละขั้น
+- ARCHITECTURE.md อธิบายการไหลของข้อมูลและจุดที่ควรแก้
+- SECURITY.md ระบุข้อห้ามและ Production checklist
+- AI-BUILD-PROMPT.md สำหรับคัดลอกไปสั่ง Coding Agent ให้ต่อยอด
+- kit.json เป็น Metadata ที่ระบบตรวจสอบและสร้าง Index ใช้
 
-จำนวน Stars เป็นเพียงองค์ประกอบหนึ่งในการประเมิน ไม่ใช่หลักตัดสินเพียงอย่างเดียว
+## โครงสร้าง Repository
 
-## โครงสร้าง
-
-```text
-catalog/
-  repositories/
-  system-prompts/
-  cursor-rules/
-  agent-instructions/
-  app-templates/
-  workflows/
+~~~text
+kits/                         # ผลงานหลัก: ชุดเริ่มต้นพร้อมใช้
+  line-mini-app-gas-sheets/   # Kit แรก
 templates/
-  ENTRY_TEMPLATE.md
-archive/
-```
+  KIT_TEMPLATE.md             # มาตรฐานสำหรับสร้าง Kit ใหม่
+catalog/                      # Legacy Reference: บทวิเคราะห์แหล่งข้อมูลเดิม
+archive/                      # เนื้อหาที่เลิกใช้งาน
+scripts/                      # Validation และ Index builders
+~~~
 
-หนึ่งแหล่งข้อมูลต่อหนึ่งไฟล์ Markdown และใช้ชื่อไฟล์แบบ `lowercase-kebab-case.md`
+catalog/ ยังเก็บไว้เป็นแหล่งอ้างอิงเดิม แต่ไม่ใช่หน้าหลักของ Hub อีกต่อไป
 
-## หลักการตรวจสอบ
+## วิธีตรวจสอบก่อน Commit
 
-1. ตรวจ README, LICENSE, Release, Commit และโครงสร้างไฟล์จากต้นทาง
-2. แยกข้อมูลที่ยืนยันได้ออกจากความคิดเห็นหรือข้อสันนิษฐาน
-3. ตรวจสคริปต์ติดตั้ง, dependency, credential และคำสั่งที่มีความเสี่ยง
-4. ตรวจรายการซ้ำก่อนสร้างหรือปรับปรุงไฟล์
-5. ไม่คัดลอกไฟล์เต็มเมื่อไม่มี License
-6. ไม่เก็บ API key, token, password, cookie หรือข้อมูลส่วนตัว
-7. ให้เครดิตและเชื่อมกลับไปยังต้นฉบับเสมอ
+~~~bash
+npm test
+npm run build
+npm test
+~~~
+
+คำสั่งเหล่านี้ตรวจทั้ง Project Kits และ Catalog เดิม รวมถึงสร้าง kits/INDEX.md กับ catalog/INDEX.md ใหม่
+
+## หลักการของ Project Kit
+
+1. **นำไปเริ่มงานได้จริง** — ต้องมีโค้ดหรือไฟล์ตั้งต้น ไม่ใช่มีเพียงลิงก์
+2. **ตั้งค่าได้โดยไม่ฝัง Secret** — Secret อยู่ในบริการที่เหมาะสม เช่น Apps Script Properties
+3. **AI อ่านแล้วทำต่อได้** — มีขอบเขต สถาปัตยกรรม และ Acceptance Criteria
+4. **ตรวจสอบได้** — มี Metadata, Validation และคำสั่งทดสอบ
+5. **รับผิดชอบต่อผู้ใช้** — มี validation, error feedback, accessibility และ UI ต้องแสดงสถานะจริง
 
 ## การมีส่วนร่วม
 
-การเพิ่มรายการใหม่ควรเริ่มจาก [Entry Template](templates/ENTRY_TEMPLATE.md) ตรวจข้อมูลจากต้นทาง แล้วรันคำสั่งต่อไปนี้ก่อน Commit ทุกครั้ง
-
-```bash
-npm test
-npm run build
-```
-
-เมื่อทั้งสองคำสั่งผ่านโดยไม่มี Error ให้ Commit ด้วยข้อความกระชับและ Push ตรงเข้า `main` ไม่ต้องเปิด Pull Request เว้นแต่ได้รับคำสั่งโดยชัดเจน
+อ่าน [CONTRIBUTING.md](CONTRIBUTING.md) และเริ่ม Kit ใหม่จาก [KIT_TEMPLATE.md](templates/KIT_TEMPLATE.md)
 
 ## License
 
-License ของแหล่งข้อมูลแต่ละรายการต้องระบุในไฟล์รายการนั้น เนื้อหาจากต้นทางยังอยู่ภายใต้ License และลิขสิทธิ์ของผู้สร้างเดิม
-
-Repository นี้ยังไม่ได้กำหนด License รวมสำหรับเนื้อหาที่ผู้ดูแลเขียนขึ้นใหม่
+แต่ละ Kit ระบุ License ของตัวเองภายในโฟลเดอร์ Kit ส่วนข้อมูลใน catalog/ ยังคงอยู่ภายใต้ License และลิขสิทธิ์ของแหล่งต้นทางที่ระบุในแต่ละรายการ
